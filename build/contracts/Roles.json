@@ -1,9 +1,8 @@
 {
   "contractName": "Roles",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{},\"title\":\"Roles\\r\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/gilbe/OneDrive/Documents/Project/Blockchain-DApp-for-tracking-items-through-Supply-Chain/contracts/coffeeaccesscontrol/Roles.sol\":\"Roles\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/gilbe/OneDrive/Documents/Project/Blockchain-DApp-for-tracking-items-through-Supply-Chain/contracts/coffeeaccesscontrol/Roles.sol\":{\"keccak256\":\"0x9585c33b9a3800337ad4c515870d756132edc5cabf593c010a4be4800edc037f\",\"urls\":[\"bzzr://a0168c5b1eb66605cc8e68094d8b8c3a0210cbad390f2df3fa0a5be9ebad26cb\"]}},\"version\":1}",
-  "bytecode": "0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600080fd00a165627a7a723058206eaf1986e128e999b62e3719848754838a65c673f594713ddc7b7480d4e9696e0029",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fd00a165627a7a723058206eaf1986e128e999b62e3719848754838a65c673f594713ddc7b7480d4e9696e0029",
+  "bytecode": "0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea165627a7a723058205f87f3830e2a30675aceed4818abfa30a36c2ca690919fdfd9de8937124468c50029",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea165627a7a723058205f87f3830e2a30675aceed4818abfa30a36c2ca690919fdfd9de8937124468c50029",
   "sourceMap": "116:946:5:-;;132:2:-1;166:7;155:9;146:7;137:37;252:7;246:14;243:1;238:23;232:4;229:33;270:1;265:20;;;;222:63;;265:20;274:9;222:63;;298:9;295:1;288:20;328:4;319:7;311:22;352:7;343;336:24",
   "deployedSourceMap": "116:946:5:-;;;;;;;;",
   "source": "pragma solidity >=0.4.24;\r\n\r\n/**\r\n * @title Roles\r\n * @dev Library for managing addresses assigned to a Role.\r\n */\r\nlibrary Roles {\r\n  struct Role {\r\n    mapping (address => bool) bearer;\r\n  }\r\n\r\n  /**\r\n   * @dev give an account access to this role\r\n   */\r\n  function add(Role storage role, address account) internal {\r\n    require(account != address(0), \"verify account\");\r\n    require(!has(role, account), \"verify account has the role\");\r\n\r\n    role.bearer[account] = true;\r\n  }\r\n\r\n  /**\r\n   * @dev remove an account's access to this role\r\n   */\r\n  function remove(Role storage role, address account) internal {\r\n    require(account != address(0), \"verify account\");\r\n    require(has(role, account), \"verify account has the role\");\r\n\r\n    role.bearer[account] = false;\r\n  }\r\n\r\n  /**\r\n   * @dev check if an account has this role\r\n   * @return bool\r\n   */\r\n  function has(Role storage role, address account)\r\n    internal\r\n    view\r\n    returns (bool)\r\n  {\r\n    require(account != address(0), \"Account is not verified\");\r\n    return role.bearer[account];\r\n  }\r\n}",
@@ -186,8 +185,8 @@
                           "nodeType": "FunctionCall",
                           "src": "343:10:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
                           }
                         },
                         "src": "332:21:5",
@@ -230,10 +229,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1535,
-                        1536
+                        1523,
+                        1524
                       ],
-                      "referencedDeclaration": 1536,
+                      "referencedDeclaration": 1524,
                       "src": "324:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -378,10 +377,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1535,
-                        1536
+                        1523,
+                        1524
                       ],
-                      "referencedDeclaration": 1536,
+                      "referencedDeclaration": 1524,
                       "src": "379:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -505,8 +504,7 @@
             "documentation": "@dev give an account access to this role\r",
             "id": 513,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "add",
             "nodeType": "FunctionDefinition",
@@ -560,6 +558,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "291:7:5",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -571,7 +570,6 @@
               ],
               "src": "271:36:5"
             },
-            "payable": false,
             "returnParameters": {
               "id": 485,
               "nodeType": "ParameterList",
@@ -672,8 +670,8 @@
                           "nodeType": "FunctionCall",
                           "src": "638:10:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
                           }
                         },
                         "src": "627:21:5",
@@ -716,10 +714,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1535,
-                        1536
+                        1523,
+                        1524
                       ],
-                      "referencedDeclaration": 1536,
+                      "referencedDeclaration": 1524,
                       "src": "619:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -848,10 +846,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1535,
-                        1536
+                        1523,
+                        1524
                       ],
-                      "referencedDeclaration": 1536,
+                      "referencedDeclaration": 1524,
                       "src": "674:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -975,8 +973,7 @@
             "documentation": "@dev remove an account's access to this role\r",
             "id": 546,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "remove",
             "nodeType": "FunctionDefinition",
@@ -1030,6 +1027,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "586:7:5",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1041,7 +1039,6 @@
               ],
               "src": "566:36:5"
             },
-            "payable": false,
             "returnParameters": {
               "id": 519,
               "nodeType": "ParameterList",
@@ -1142,8 +1139,8 @@
                           "nodeType": "FunctionCall",
                           "src": "981:10:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
                           }
                         },
                         "src": "970:21:5",
@@ -1186,10 +1183,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1535,
-                        1536
+                        1523,
+                        1524
                       ],
-                      "referencedDeclaration": 1536,
+                      "referencedDeclaration": 1524,
                       "src": "962:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1281,8 +1278,7 @@
             "documentation": "@dev check if an account has this role\r\n@return bool\r",
             "id": 570,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "has",
             "nodeType": "FunctionDefinition",
@@ -1336,6 +1332,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "891:7:5",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1347,7 +1344,6 @@
               ],
               "src": "871:36:5"
             },
-            "payable": false,
             "returnParameters": {
               "id": 554,
               "nodeType": "ParameterList",
@@ -1572,8 +1568,8 @@
                           "nodeType": "FunctionCall",
                           "src": "343:10:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
                           }
                         },
                         "src": "332:21:5",
@@ -1616,10 +1612,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1535,
-                        1536
+                        1523,
+                        1524
                       ],
-                      "referencedDeclaration": 1536,
+                      "referencedDeclaration": 1524,
                       "src": "324:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1764,10 +1760,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1535,
-                        1536
+                        1523,
+                        1524
                       ],
-                      "referencedDeclaration": 1536,
+                      "referencedDeclaration": 1524,
                       "src": "379:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1891,8 +1887,7 @@
             "documentation": "@dev give an account access to this role\r",
             "id": 513,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "add",
             "nodeType": "FunctionDefinition",
@@ -1946,6 +1941,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "291:7:5",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1957,7 +1953,6 @@
               ],
               "src": "271:36:5"
             },
-            "payable": false,
             "returnParameters": {
               "id": 485,
               "nodeType": "ParameterList",
@@ -2058,8 +2053,8 @@
                           "nodeType": "FunctionCall",
                           "src": "638:10:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
                           }
                         },
                         "src": "627:21:5",
@@ -2102,10 +2097,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1535,
-                        1536
+                        1523,
+                        1524
                       ],
-                      "referencedDeclaration": 1536,
+                      "referencedDeclaration": 1524,
                       "src": "619:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2234,10 +2229,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1535,
-                        1536
+                        1523,
+                        1524
                       ],
-                      "referencedDeclaration": 1536,
+                      "referencedDeclaration": 1524,
                       "src": "674:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2361,8 +2356,7 @@
             "documentation": "@dev remove an account's access to this role\r",
             "id": 546,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "remove",
             "nodeType": "FunctionDefinition",
@@ -2416,6 +2410,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "586:7:5",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2427,7 +2422,6 @@
               ],
               "src": "566:36:5"
             },
-            "payable": false,
             "returnParameters": {
               "id": 519,
               "nodeType": "ParameterList",
@@ -2528,8 +2522,8 @@
                           "nodeType": "FunctionCall",
                           "src": "981:10:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
                           }
                         },
                         "src": "970:21:5",
@@ -2572,10 +2566,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1535,
-                        1536
+                        1523,
+                        1524
                       ],
-                      "referencedDeclaration": 1536,
+                      "referencedDeclaration": 1524,
                       "src": "962:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2667,8 +2661,7 @@
             "documentation": "@dev check if an account has this role\r\n@return bool\r",
             "id": 570,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "has",
             "nodeType": "FunctionDefinition",
@@ -2722,6 +2715,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "891:7:5",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2733,7 +2727,6 @@
               ],
               "src": "871:36:5"
             },
-            "payable": false,
             "returnParameters": {
               "id": 554,
               "nodeType": "ParameterList",
@@ -2782,12 +2775,13 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.11",
-  "updatedAt": "2023-05-07T07:10:46.428Z",
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2023-05-20T01:03:42.555Z",
   "devdoc": {
+    "details": "Library for managing addresses assigned to a Role.\r",
     "methods": {},
     "title": "Roles\r"
   },

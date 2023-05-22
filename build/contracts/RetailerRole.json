@@ -5,7 +5,8 @@
       "inputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "constructor"
+      "type": "constructor",
+      "signature": "constructor"
     },
     {
       "anonymous": false,
@@ -17,7 +18,8 @@
         }
       ],
       "name": "RetailerAdded",
-      "type": "event"
+      "type": "event",
+      "signature": "0x71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa"
     },
     {
       "anonymous": false,
@@ -29,7 +31,8 @@
         }
       ],
       "name": "RetailerRemoved",
-      "type": "event"
+      "type": "event",
+      "signature": "0xdb7176e79cffef81cb01767dd0447a0b24bb72ca9778d4b245581086b2a7e6db"
     },
     {
       "constant": true,
@@ -48,7 +51,8 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "signature": "0x5da09b88"
     },
     {
       "constant": false,
@@ -62,7 +66,8 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "signature": "0x8ec4f505"
     },
     {
       "constant": false,
@@ -71,14 +76,14 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "signature": "0xdb0e6a2f"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isRetailer\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"addRetailer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceRetailer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"RetailerAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"RetailerRemoved\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/gilbe/OneDrive/Documents/Project/Blockchain-DApp-for-tracking-items-through-Supply-Chain/contracts/coffeeaccesscontrol/RetailerRole.sol\":\"RetailerRole\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/gilbe/OneDrive/Documents/Project/Blockchain-DApp-for-tracking-items-through-Supply-Chain/contracts/coffeeaccesscontrol/RetailerRole.sol\":{\"keccak256\":\"0x62df9467829f55f1c8b2203b7b3145d2f815466a261ad974a27a98bed04db8e6\",\"urls\":[\"bzzr://8ed7d97e0fb6404c8a4b1142f8d94f5c33f780f853fcbfc66eb2058e3438ad68\"]},\"/C/Users/gilbe/OneDrive/Documents/Project/Blockchain-DApp-for-tracking-items-through-Supply-Chain/contracts/coffeeaccesscontrol/Roles.sol\":{\"keccak256\":\"0x9585c33b9a3800337ad4c515870d756132edc5cabf593c010a4be4800edc037f\",\"urls\":[\"bzzr://a0168c5b1eb66605cc8e68094d8b8c3a0210cbad390f2df3fa0a5be9ebad26cb\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506100293361002e640100000000026401000000009004565b610323565b61004f81600061009564010000000002610373179091906401000000009004565b8073ffffffffffffffffffffffffffffffffffffffff167f71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa60405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561013a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f766572696679206163636f756e7400000000000000000000000000000000000081525060200191505060405180910390fd5b6101538282610226640100000000026401000000009004565b1515156101c8576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f766572696679206163636f756e74206861732074686520726f6c65000000000081525060200191505060405180910390fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156102cc576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260178152602001807f4163636f756e74206973206e6f7420766572696669656400000000000000000081525060200191505060405180910390fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b6106a2806103326000396000f300608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635da09b881461005c5780638ec4f505146100b7578063db0e6a2f146100fa575b600080fd5b34801561006857600080fd5b5061009d600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610111565b604051808215151515815260200191505060405180910390f35b3480156100c357600080fd5b506100f8600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061012e565b005b34801561010657600080fd5b5061010f6101b7565b005b60006101278260006101c290919063ffffffff16565b9050919050565b61013733610111565b15156101ab576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260198152602001807f43616c6c6572206973206e6f7420612072657461696c65722e0000000000000081525060200191505060405180910390fd5b6101b4816102bf565b50565b6101c033610319565b565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614151515610268576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260178152602001807f4163636f756e74206973206e6f7420766572696669656400000000000000000081525060200191505060405180910390fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b6102d381600061037390919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa60405160405180910390a250565b61032d8160006104f590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fdb7176e79cffef81cb01767dd0447a0b24bb72ca9778d4b245581086b2a7e6db60405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151515610418576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f766572696679206163636f756e7400000000000000000000000000000000000081525060200191505060405180910390fd5b61042282826101c2565b151515610497576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f766572696679206163636f756e74206861732074686520726f6c65000000000081525060200191505060405180910390fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561059a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f766572696679206163636f756e7400000000000000000000000000000000000081525060200191505060405180910390fd5b6105a482826101c2565b1515610618576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f766572696679206163636f756e74206861732074686520726f6c65000000000081525060200191505060405180910390fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555050505600a165627a7a72305820f3f40ec4caa7314ff862707256509914c115d9ee464804f3e5cf1205c0954f200029",
-  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635da09b881461005c5780638ec4f505146100b7578063db0e6a2f146100fa575b600080fd5b34801561006857600080fd5b5061009d600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610111565b604051808215151515815260200191505060405180910390f35b3480156100c357600080fd5b506100f8600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061012e565b005b34801561010657600080fd5b5061010f6101b7565b005b60006101278260006101c290919063ffffffff16565b9050919050565b61013733610111565b15156101ab576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260198152602001807f43616c6c6572206973206e6f7420612072657461696c65722e0000000000000081525060200191505060405180910390fd5b6101b4816102bf565b50565b6101c033610319565b565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614151515610268576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260178152602001807f4163636f756e74206973206e6f7420766572696669656400000000000000000081525060200191505060405180910390fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b6102d381600061037390919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa60405160405180910390a250565b61032d8160006104f590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fdb7176e79cffef81cb01767dd0447a0b24bb72ca9778d4b245581086b2a7e6db60405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151515610418576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f766572696679206163636f756e7400000000000000000000000000000000000081525060200191505060405180910390fd5b61042282826101c2565b151515610497576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f766572696679206163636f756e74206861732074686520726f6c65000000000081525060200191505060405180910390fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561059a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f766572696679206163636f756e7400000000000000000000000000000000000081525060200191505060405180910390fd5b6105a482826101c2565b1515610618576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f766572696679206163636f756e74206861732074686520726f6c65000000000081525060200191505060405180910390fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555050505600a165627a7a72305820f3f40ec4caa7314ff862707256509914c115d9ee464804f3e5cf1205c0954f200029",
-  "sourceMap": "163:1598:4:-;;;592:58;8:9:-1;5:2;;;30:1;27;20:12;5:2;592:58:4;620:24;633:10;620:12;;;:24;;;:::i;:::-;163:1598;;1410:117;1465:22;1479:7;1465:9;:13;;;;;;:22;;;;;:::i;:::-;1513:7;1499:22;;;;;;;;;;;;1410:117;:::o;259:221:5:-;351:1;332:21;;:7;:21;;;;324:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;388:18;392:4;398:7;388:3;;;:18;;;:::i;:::-;387:19;379:59;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;470:4;447;:11;;:20;459:7;447:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;259:221;;:::o;859:200::-;946:4;989:1;970:21;;:7;:21;;;;962:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1033:4;:11;;:20;1045:7;1033:20;;;;;;;;;;;;;;;;;;;;;;;;;1026:27;;859:200;;;;:::o;163:1598:4:-;;;;;;;",
-  "deployedSourceMap": "163:1598:4:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;905:106;;8:9:-1;5:2;;;30:1;27;20:12;5:2;905:106:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1075:92;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1075:92:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;1238:75;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1238:75:4;;;;;;905:106;963:4;983:22;997:7;983:9;:13;;:22;;;;:::i;:::-;976:29;;905:106;;;:::o;1075:92::-;777:22;788:10;777;:22::i;:::-;769:60;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1140:21;1153:7;1140:12;:21::i;:::-;1075:92;:::o;1238:75::-;1280:27;1296:10;1280:15;:27::i;:::-;1238:75::o;859:200:5:-;946:4;989:1;970:21;;:7;:21;;;;962:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1033:4;:11;;:20;1045:7;1033:20;;;;;;;;;;;;;;;;;;;;;;;;;1026:27;;859:200;;;;:::o;1410:117:4:-;1465:22;1479:7;1465:9;:13;;:22;;;;:::i;:::-;1513:7;1499:22;;;;;;;;;;;;1410:117;:::o;1633:125::-;1691:25;1708:7;1691:9;:16;;:25;;;;:::i;:::-;1744:7;1728:24;;;;;;;;;;;;1633:125;:::o;259:221:5:-;351:1;332:21;;:7;:21;;;;324:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;388:18;392:4;398:7;388:3;:18::i;:::-;387:19;379:59;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;470:4;447;:11;;:20;459:7;447:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;259:221;;:::o;551:224::-;646:1;627:21;;:7;:21;;;;619:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;682:18;686:4;692:7;682:3;:18::i;:::-;674:58;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;764:5;741:4;:11;;:20;753:7;741:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;551:224;;:::o",
+  "bytecode": "0x608060405234801561001057600080fd5b5061002333640100000000610028810204565b61022b565b61004060008264010000000061028c61007782021704565b604051600160a060020a038216907f71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa90600090a250565b600160a060020a03811615156100ee57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600e60248201527f766572696679206163636f756e74000000000000000000000000000000000000604482015290519081900360640190fd5b6101018282640100000000610192810204565b1561016d57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601b60248201527f766572696679206163636f756e74206861732074686520726f6c650000000000604482015290519081900360640190fd5b600160a060020a0316600090815260209190915260409020805460ff19166001179055565b6000600160a060020a038216151561020b57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601760248201527f4163636f756e74206973206e6f74207665726966696564000000000000000000604482015290519081900360640190fd5b50600160a060020a03166000908152602091909152604090205460ff1690565b61047e8061023a6000396000f3fe6080604052600436106100565763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416635da09b88811461005b5780638ec4f505146100a2578063db0e6a2f146100d7575b600080fd5b34801561006757600080fd5b5061008e6004803603602081101561007e57600080fd5b5035600160a060020a03166100ec565b604080519115158252519081900360200190f35b3480156100ae57600080fd5b506100d5600480360360208110156100c557600080fd5b5035600160a060020a0316610104565b005b3480156100e357600080fd5b506100d561016f565b60006100fe818363ffffffff61017a16565b92915050565b61010d336100ec565b1515610163576040805160e560020a62461bcd02815260206004820152601960248201527f43616c6c6572206973206e6f7420612072657461696c65722e00000000000000604482015290519081900360640190fd5b61016c816101fc565b50565b61017833610244565b565b6000600160a060020a03821615156101dc576040805160e560020a62461bcd02815260206004820152601760248201527f4163636f756e74206973206e6f74207665726966696564000000000000000000604482015290519081900360640190fd5b50600160a060020a03166000908152602091909152604090205460ff1690565b61020d60008263ffffffff61028c16565b604051600160a060020a038216907f71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa90600090a250565b61025560008263ffffffff61037016565b604051600160a060020a038216907fdb7176e79cffef81cb01767dd0447a0b24bb72ca9778d4b245581086b2a7e6db90600090a250565b600160a060020a03811615156102ec576040805160e560020a62461bcd02815260206004820152600e60248201527f766572696679206163636f756e74000000000000000000000000000000000000604482015290519081900360640190fd5b6102f6828261017a565b1561034b576040805160e560020a62461bcd02815260206004820152601b60248201527f766572696679206163636f756e74206861732074686520726f6c650000000000604482015290519081900360640190fd5b600160a060020a0316600090815260209190915260409020805460ff19166001179055565b600160a060020a03811615156103d0576040805160e560020a62461bcd02815260206004820152600e60248201527f766572696679206163636f756e74000000000000000000000000000000000000604482015290519081900360640190fd5b6103da828261017a565b1515610430576040805160e560020a62461bcd02815260206004820152601b60248201527f766572696679206163636f756e74206861732074686520726f6c650000000000604482015290519081900360640190fd5b600160a060020a0316600090815260209190915260409020805460ff1916905556fea165627a7a723058206e33327330e1f5e43076bf13506227c07d3903b3064a4910f88df0d343b7c4d20029",
+  "deployedBytecode": "0x6080604052600436106100565763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416635da09b88811461005b5780638ec4f505146100a2578063db0e6a2f146100d7575b600080fd5b34801561006757600080fd5b5061008e6004803603602081101561007e57600080fd5b5035600160a060020a03166100ec565b604080519115158252519081900360200190f35b3480156100ae57600080fd5b506100d5600480360360208110156100c557600080fd5b5035600160a060020a0316610104565b005b3480156100e357600080fd5b506100d561016f565b60006100fe818363ffffffff61017a16565b92915050565b61010d336100ec565b1515610163576040805160e560020a62461bcd02815260206004820152601960248201527f43616c6c6572206973206e6f7420612072657461696c65722e00000000000000604482015290519081900360640190fd5b61016c816101fc565b50565b61017833610244565b565b6000600160a060020a03821615156101dc576040805160e560020a62461bcd02815260206004820152601760248201527f4163636f756e74206973206e6f74207665726966696564000000000000000000604482015290519081900360640190fd5b50600160a060020a03166000908152602091909152604090205460ff1690565b61020d60008263ffffffff61028c16565b604051600160a060020a038216907f71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa90600090a250565b61025560008263ffffffff61037016565b604051600160a060020a038216907fdb7176e79cffef81cb01767dd0447a0b24bb72ca9778d4b245581086b2a7e6db90600090a250565b600160a060020a03811615156102ec576040805160e560020a62461bcd02815260206004820152600e60248201527f766572696679206163636f756e74000000000000000000000000000000000000604482015290519081900360640190fd5b6102f6828261017a565b1561034b576040805160e560020a62461bcd02815260206004820152601b60248201527f766572696679206163636f756e74206861732074686520726f6c650000000000604482015290519081900360640190fd5b600160a060020a0316600090815260209190915260409020805460ff19166001179055565b600160a060020a03811615156103d0576040805160e560020a62461bcd02815260206004820152600e60248201527f766572696679206163636f756e74000000000000000000000000000000000000604482015290519081900360640190fd5b6103da828261017a565b1515610430576040805160e560020a62461bcd02815260206004820152601b60248201527f766572696679206163636f756e74206861732074686520726f6c650000000000604482015290519081900360640190fd5b600160a060020a0316600090815260209190915260409020805460ff1916905556fea165627a7a723058206e33327330e1f5e43076bf13506227c07d3903b3064a4910f88df0d343b7c4d20029",
+  "sourceMap": "163:1598:4:-;;;592:58;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;620:24:4;633:10;620:12;;;;:24;:::i;:::-;163:1598;;1410:117;1465:22;:9;1479:7;1465:13;;;;;;:22;:::i;:::-;1499;;-1:-1:-1;;;;;1499:22:4;;;;;;;;1410:117;:::o;259:221:5:-;-1:-1:-1;;;;;332:21:5;;;;324:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;388:18;392:4;398:7;388:3;;;;:18;:::i;:::-;387:19;379:59;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;447:20:5;:11;:20;;;;;;;;;;;:27;;-1:-1:-1;;447:27:5;470:4;447:27;;;259:221::o;859:200::-;946:4;-1:-1:-1;;;;;970:21:5;;;;962:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;1033:20:5;:11;:20;;;;;;;;;;;;;;;859:200::o;163:1598:4:-;;;;;;;",
+  "deployedSourceMap": "163:1598:4:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;905:106;;8:9:-1;5:2;;;30:1;27;20:12;5:2;905:106:4;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;905:106:4;-1:-1:-1;;;;;905:106:4;;;;;;;;;;;;;;;;;;;;;1075:92;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1075:92:4;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1075:92:4;-1:-1:-1;;;;;1075:92:4;;;;;1238:75;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1238:75:4;;;;905:106;963:4;983:22;963:4;997:7;983:22;:13;:22;:::i;:::-;976:29;905:106;-1:-1:-1;;905:106:4:o;1075:92::-;777:22;788:10;777;:22::i;:::-;769:60;;;;;;;-1:-1:-1;;;;;769:60:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;1140:21;1153:7;1140:12;:21::i;:::-;1075:92;:::o;1238:75::-;1280:27;1296:10;1280:15;:27::i;:::-;1238:75::o;859:200:5:-;946:4;-1:-1:-1;;;;;970:21:5;;;;962:57;;;;;-1:-1:-1;;;;;962:57:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;1033:20:5;:11;:20;;;;;;;;;;;;;;;859:200::o;1410:117:4:-;1465:22;:9;1479:7;1465:22;:13;:22;:::i;:::-;1499;;-1:-1:-1;;;;;1499:22:4;;;;;;;;1410:117;:::o;1633:125::-;1691:25;:9;1708:7;1691:25;:16;:25;:::i;:::-;1728:24;;-1:-1:-1;;;;;1728:24:4;;;;;;;;1633:125;:::o;259:221:5:-;-1:-1:-1;;;;;332:21:5;;;;324:48;;;;;-1:-1:-1;;;;;324:48:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;388:18;392:4;398:7;388:3;:18::i;:::-;387:19;379:59;;;;;-1:-1:-1;;;;;379:59:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;447:20:5;:11;:20;;;;;;;;;;;:27;;-1:-1:-1;;447:27:5;470:4;447:27;;;259:221::o;551:224::-;-1:-1:-1;;;;;627:21:5;;;;619:48;;;;;-1:-1:-1;;;;;619:48:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;682:18;686:4;692:7;682:3;:18::i;:::-;674:58;;;;;;;-1:-1:-1;;;;;674:58:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;741:20:5;764:5;741:20;;;;;;;;;;;:28;;-1:-1:-1;;741:28:5;;;551:224::o",
   "source": "pragma solidity >=0.4.24;\r\n\r\n// Import the library 'Roles'\r\nimport \"./Roles.sol\";\r\n\r\n// Define a contract 'RetailerRole' to manage this role - add, remove, check\r\ncontract RetailerRole {\r\n  using Roles for Roles.Role;\r\n\r\n  // Define 2 events, one for Adding, and other for Removing\r\n  event RetailerAdded(address indexed account);\r\n  event RetailerRemoved(address indexed account);\r\n\r\n  // Define a struct 'retailers' by inheriting from 'Roles' library, struct Role\r\n  Roles.Role private retailers;\r\n\r\n\r\n  // In the constructor make the address that deploys this contract the 1st retailer\r\n  constructor() public {\r\n    _addRetailer(msg.sender);\r\n  }\r\n\r\n  // Define a modifier that checks to see if msg.sender has the appropriate role\r\n  modifier onlyRetailer() {\r\n    require(isRetailer(msg.sender), \"Caller is not a retailer.\");\r\n    _;\r\n  }\r\n\r\n  // Define a function 'isRetailer' to check this role\r\n  function isRetailer(address account) public view returns (bool) {\r\n    return retailers.has(account);\r\n  }\r\n\r\n  // Define a function 'addRetailer' that adds this role\r\n  function addRetailer(address account) public onlyRetailer {\r\n    _addRetailer(account);\r\n  }\r\n\r\n  // Define a function 'renounceRetailer' to renounce this role\r\n  function renounceRetailer() public {\r\n    _removeRetailer(msg.sender);\r\n  }\r\n\r\n  // Define an internal function '_addRetailer' to add this role, called by 'addRetailer'\r\n  function _addRetailer(address account) internal {\r\n    retailers.add(account);\r\n    emit RetailerAdded(account);\r\n  }\r\n\r\n  // Define an internal function '_removeRetailer' to remove this role, called by 'removeRetailer'\r\n  function _removeRetailer(address account) internal {\r\n    retailers.remove(account);\r\n    emit RetailerRemoved(account);\r\n  }\r\n}\r\n",
   "sourcePath": "C:\\Users\\gilbe\\OneDrive\\Documents\\Project\\Blockchain-DApp-for-tracking-items-through-Supply-Chain\\contracts\\coffeeaccesscontrol\\RetailerRole.sol",
   "ast": {
@@ -184,6 +189,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "305:7:4",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -226,6 +232,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "356:7:4",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -285,7 +292,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1532,
+                          "referencedDeclaration": 1520,
                           "src": "633:3:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -302,16 +309,16 @@
                         "referencedDeclaration": null,
                         "src": "633:10:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
                         }
                       }
                     ],
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
                         }
                       ],
                       "id": 387,
@@ -348,8 +355,7 @@
             "documentation": null,
             "id": 393,
             "implemented": true,
-            "isConstructor": true,
-            "isDeclaredConst": false,
+            "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
@@ -359,7 +365,6 @@
               "parameters": [],
               "src": "603:2:4"
             },
-            "payable": false,
             "returnParameters": {
               "id": 386,
               "nodeType": "ParameterList",
@@ -393,7 +398,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1532,
+                              "referencedDeclaration": 1520,
                               "src": "788:3:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -410,16 +415,16 @@
                             "referencedDeclaration": null,
                             "src": "788:10:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_address",
-                              "typeString": "address"
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
                             }
                           }
                         ],
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_address",
-                              "typeString": "address"
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
                             }
                           ],
                           "id": 396,
@@ -481,10 +486,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1535,
-                        1536
+                        1523,
+                        1524
                       ],
-                      "referencedDeclaration": 1536,
+                      "referencedDeclaration": 1524,
                       "src": "769:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -611,8 +616,7 @@
             "documentation": null,
             "id": 418,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "isRetailer",
             "nodeType": "FunctionDefinition",
@@ -638,6 +642,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "925:7:4",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -649,7 +654,6 @@
               ],
               "src": "924:17:4"
             },
-            "payable": false,
             "returnParameters": {
               "id": 411,
               "nodeType": "ParameterList",
@@ -754,8 +758,7 @@
             "documentation": null,
             "id": 430,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [
               {
                 "arguments": null,
@@ -801,6 +804,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1096:7:4",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -812,7 +816,6 @@
               ],
               "src": "1095:17:4"
             },
-            "payable": false,
             "returnParameters": {
               "id": 424,
               "nodeType": "ParameterList",
@@ -843,7 +846,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1532,
+                          "referencedDeclaration": 1520,
                           "src": "1296:3:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -860,16 +863,16 @@
                         "referencedDeclaration": null,
                         "src": "1296:10:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
                         }
                       }
                     ],
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
                         }
                       ],
                       "id": 433,
@@ -906,8 +909,7 @@
             "documentation": null,
             "id": 439,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "renounceRetailer",
             "nodeType": "FunctionDefinition",
@@ -917,7 +919,6 @@
               "parameters": [],
               "src": "1263:2:4"
             },
-            "payable": false,
             "returnParameters": {
               "id": 432,
               "nodeType": "ParameterList",
@@ -1065,8 +1066,7 @@
             "documentation": null,
             "id": 455,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "_addRetailer",
             "nodeType": "FunctionDefinition",
@@ -1092,6 +1092,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1432:7:4",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1103,7 +1104,6 @@
               ],
               "src": "1431:17:4"
             },
-            "payable": false,
             "returnParameters": {
               "id": 443,
               "nodeType": "ParameterList",
@@ -1251,8 +1251,7 @@
             "documentation": null,
             "id": 471,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "_removeRetailer",
             "nodeType": "FunctionDefinition",
@@ -1278,6 +1277,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1658:7:4",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1289,7 +1289,6 @@
               ],
               "src": "1657:17:4"
             },
-            "payable": false,
             "returnParameters": {
               "id": 459,
               "nodeType": "ParameterList",
@@ -1412,6 +1411,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "305:7:4",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1454,6 +1454,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "356:7:4",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1513,7 +1514,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1532,
+                          "referencedDeclaration": 1520,
                           "src": "633:3:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1530,16 +1531,16 @@
                         "referencedDeclaration": null,
                         "src": "633:10:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
                         }
                       }
                     ],
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
                         }
                       ],
                       "id": 387,
@@ -1576,8 +1577,7 @@
             "documentation": null,
             "id": 393,
             "implemented": true,
-            "isConstructor": true,
-            "isDeclaredConst": false,
+            "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
@@ -1587,7 +1587,6 @@
               "parameters": [],
               "src": "603:2:4"
             },
-            "payable": false,
             "returnParameters": {
               "id": 386,
               "nodeType": "ParameterList",
@@ -1621,7 +1620,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1532,
+                              "referencedDeclaration": 1520,
                               "src": "788:3:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -1638,16 +1637,16 @@
                             "referencedDeclaration": null,
                             "src": "788:10:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_address",
-                              "typeString": "address"
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
                             }
                           }
                         ],
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_address",
-                              "typeString": "address"
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
                             }
                           ],
                           "id": 396,
@@ -1709,10 +1708,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1535,
-                        1536
+                        1523,
+                        1524
                       ],
-                      "referencedDeclaration": 1536,
+                      "referencedDeclaration": 1524,
                       "src": "769:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1839,8 +1838,7 @@
             "documentation": null,
             "id": 418,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "isRetailer",
             "nodeType": "FunctionDefinition",
@@ -1866,6 +1864,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "925:7:4",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1877,7 +1876,6 @@
               ],
               "src": "924:17:4"
             },
-            "payable": false,
             "returnParameters": {
               "id": 411,
               "nodeType": "ParameterList",
@@ -1982,8 +1980,7 @@
             "documentation": null,
             "id": 430,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [
               {
                 "arguments": null,
@@ -2029,6 +2026,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1096:7:4",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2040,7 +2038,6 @@
               ],
               "src": "1095:17:4"
             },
-            "payable": false,
             "returnParameters": {
               "id": 424,
               "nodeType": "ParameterList",
@@ -2071,7 +2068,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1532,
+                          "referencedDeclaration": 1520,
                           "src": "1296:3:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -2088,16 +2085,16 @@
                         "referencedDeclaration": null,
                         "src": "1296:10:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
                         }
                       }
                     ],
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
                         }
                       ],
                       "id": 433,
@@ -2134,8 +2131,7 @@
             "documentation": null,
             "id": 439,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "renounceRetailer",
             "nodeType": "FunctionDefinition",
@@ -2145,7 +2141,6 @@
               "parameters": [],
               "src": "1263:2:4"
             },
-            "payable": false,
             "returnParameters": {
               "id": 432,
               "nodeType": "ParameterList",
@@ -2293,8 +2288,7 @@
             "documentation": null,
             "id": 455,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "_addRetailer",
             "nodeType": "FunctionDefinition",
@@ -2320,6 +2314,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1432:7:4",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2331,7 +2326,6 @@
               ],
               "src": "1431:17:4"
             },
-            "payable": false,
             "returnParameters": {
               "id": 443,
               "nodeType": "ParameterList",
@@ -2479,8 +2473,7 @@
             "documentation": null,
             "id": 471,
             "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "_removeRetailer",
             "nodeType": "FunctionDefinition",
@@ -2506,6 +2499,7 @@
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1658:7:4",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2517,7 +2511,6 @@
               ],
               "src": "1657:17:4"
             },
-            "payable": false,
             "returnParameters": {
               "id": 459,
               "nodeType": "ParameterList",
@@ -2539,18 +2532,45 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
   },
   "networks": {
     "5777": {
-      "events": {},
+      "events": {
+        "0x71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "RetailerAdded",
+          "type": "event",
+          "signature": "0x71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa"
+        },
+        "0xdb7176e79cffef81cb01767dd0447a0b24bb72ca9778d4b245581086b2a7e6db": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "RetailerRemoved",
+          "type": "event",
+          "signature": "0xdb7176e79cffef81cb01767dd0447a0b24bb72ca9778d4b245581086b2a7e6db"
+        }
+      },
       "links": {},
-      "address": "0xB5e78f45646dBa05926Aa1ec24463b6bf9aF3064",
-      "transactionHash": "0x78b91451614e46ed8b6922ab95acd4d174dbecece28bba51cc5e00b91e065d23"
+      "address": "0x50922b8A4Ea493C83531B543A48457624d684aEA",
+      "transactionHash": "0x62220ea25c7039167ee3bf95280746fdac009bc7862048419b2dba5ff02f02f0"
     }
   },
-  "schemaVersion": "3.0.11",
-  "updatedAt": "2023-05-07T07:10:49.165Z",
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2023-05-20T01:03:44.123Z",
   "devdoc": {
     "methods": {}
   },
