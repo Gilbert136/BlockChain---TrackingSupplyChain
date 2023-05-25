@@ -21,7 +21,6 @@ App = {
         App.readForm();
         /// Setup access to blockchain
         await App.initWeb3();
-        //await App.loadWeb3();
     },
 
     readForm: function () {
@@ -38,22 +37,6 @@ App = {
         App.distributorID = $("#distributorID").val();
         App.retailerID = $("#retailerID").val();
         App.consumerID = $("#consumerID").val();
-
-        console.log(
-            App.sku,
-            App.upc,
-            App.ownerID, 
-            App.originFarmerID, 
-            App.originFarmName, 
-            App.originFarmInformation, 
-            App.originFarmLatitude, 
-            App.originFarmLongitude, 
-            App.productNotes, 
-            App.productPrice, 
-            App.distributorID, 
-            App.retailerID, 
-            App.consumerID
-        );
     },
 
     initWeb3: async function () {
@@ -84,38 +67,6 @@ App = {
         return App.initSupplyChain();
     },
 
-    loadWeb3: async () => {
-        if (typeof web3 !== 'undefined') {
-          App.web3Provider = web3.currentProvider
-          web3 = new Web3(web3.currentProvider)
-        } else {
-          window.alert("Please connect to Metamask.")
-        }
-        // Modern dapp browsers...
-        if (window.ethereum) {
-          window.web3 = new Web3(ethereum)
-          try {
-            // Request account access if needed
-            await ethereum.enable()
-            // Acccounts now exposed
-            web3.eth.sendTransaction({/* ... */})
-          } catch (error) {
-            // User denied account access...
-          }
-        }
-        // Legacy dapp browsers...
-        else if (window.web3) {
-          App.web3Provider = web3.currentProvider
-          window.web3 = new Web3(web3.currentProvider)
-          // Acccounts always exposed
-          web3.eth.sendTransaction({/* ... */})
-        }
-        // Non-dapp browsers...
-        else {
-          console.log('Non-Ethereum browser detected. You should consider trying MetaMask!')
-        }
-    },
-
     getMetaskAccountID: async function () {
         web3 = new Web3(App.web3Provider);
 
@@ -125,9 +76,10 @@ App = {
                 console.log('Error:',err);
                 return;
             }
-            console.log('getMetaskID:',res);
+            // Set the current blockchain account
             web3.eth.defaultAccount = res[0];
             App.metamaskAccountID = res[0];
+            console.log('App.metamaskAccountID: ',App.metamaskAccountID);
         })
     },
 
@@ -144,7 +96,6 @@ App = {
             App.fetchItemBufferOne();
             App.fetchItemBufferTwo();
             App.fetchEvents();
-
         });
 
         return App.bindEvents();
@@ -159,8 +110,9 @@ App = {
 
         App.getMetaskAccountID();
 
+        App.readForm();
+
         var processId = parseInt($(event.target).data('id'));
-        console.log('processId',processId);
 
         switch(processId) {
             case 1:
@@ -200,8 +152,6 @@ App = {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
 
-        console.log('hooe')
-
         try{
             const supplyChain = await App.contracts.SupplyChain.deployed();
             await supplyChain.harvestItem(
@@ -217,23 +167,6 @@ App = {
         catch(err){
             console.log(err);
         }
-        
-        //App.contracts.SupplyChain.deployed().then(function(instance) {
-        //    return instance.harvestItem(
-        //        App.upc, 
-        //        App.metamaskAccountID, 
-        //        App.originFarmName, 
-        //        App.originFarmInformation, 
-        //        App.originFarmLatitude, 
-        //        App.originFarmLongitude, 
-        //        App.productNotes
-        //    );
-        //}).then(function(result) {
-        //    $("#ftc-item").text(result);
-        //    console.log('harvestItem', result);
-        //}).catch(function(err) {
-        //    console.log(err);
-        //});
     },
 
     processItem: function (event) {
@@ -285,8 +218,8 @@ App = {
         var processId = parseInt($(event.target).data('id'));
 
         App.contracts.SupplyChain.deployed().then(function(instance) {
-            const walletValue = web3.toWei(3, "ether");
-            return instance.buyItem(App.upc, {from: App.metamaskAccountID, value: walletValue});
+            const walletValue = web3.toWei(1, "ether");
+            return instance.buyItem(App.upc, {to: "0x28D2dEcC6929C5297F1C5F1a4c53d48C1Cbd2B2f", value: walletValue});
         }).then(function(result) {
             $("#ftc-item").text(result);
             console.log('buyItem',result);
@@ -337,6 +270,37 @@ App = {
         });
     },
 
+    productStateParser: function(state) {
+        console.log(state)
+        switch(state){
+            case 0:
+                parsedState = "Harvested";
+                break;
+            case 1:
+                parsedState = "Processed";
+                break;
+            case 2:
+                parsedState = "Packed";
+                break;
+            case 3:
+                parsedState = "ForSale";
+                break;
+            case 4:
+                parsedState = "Sold";
+                break;
+            case 5:
+                parsedState = "Shipped";
+                break;
+            case 6:
+                parsedState = "Received";
+                break;
+            case 7:
+                parsedState = "Purchased";
+                break;
+        }
+        return parsedState;
+    },
+
     fetchItemBufferOne: function () {
     ///   event.preventDefault();
     ///    var processId = parseInt($(event.target).data('id'));
@@ -346,19 +310,52 @@ App = {
           return instance.fetchItemBufferOne(App.upc);
         }).then(function(result) {
           $("#ftc-item").text(result);
+          $("#product-sku").text(result[0].toNumber());
+          $("#product-upc").text(result[1].toNumber());
+          $("#owner-id").text(result[2]);
+          $("#origin-farmer-id").text(result[3]);
+          $("#origin-farm-name").text(result[4]);
+          $("#origin-farm-information").text(result[5]);
+          $("#origin-farm-latitude").text(result[6]);
+          $("#origin-farm-longitude").text(result[7]);
           console.log('fetchItemBufferOne', result);
         }).catch(function(err) {
           console.log(err.message);
         });
+
+        App.contracts.SupplyChain.deployed().then(function(instance) {
+            return instance.fetchItemBufferTwo.call(App.upc);
+          }).then(function(result) {
+            $("#ftc-item").text(result);
+            $("#product-id").text(result[2].toNumber());
+            $("#product-notes").text(result[3]);
+            $("#product-price").text(result[4]);
+            $("#item-State").text(App.productStateParser(result[5].toNumber()));
+            $("#distributor-id").text(result[6]);
+            $("#retailer-id").text(result[7]);
+            $("#consumer-id").text(result[8]);
+            console.log('fetchItemBufferTwo', result);
+          }).catch(function(err) {
+            console.log(err.message);
+          });
     },
 
     fetchItemBufferTwo: function () {
     ///    event.preventDefault();
     ///    var processId = parseInt($(event.target).data('id'));
+        App.upc = $('#upc').val();
+
         App.contracts.SupplyChain.deployed().then(function(instance) {
           return instance.fetchItemBufferTwo.call(App.upc);
         }).then(function(result) {
           $("#ftc-item").text(result);
+          $("#product-id").text(result[2].toNumber());
+          $("#product-notes").text(result[3]);
+          $("#product-price").text(result[4]);
+          $("#item-State").text(App.productStateParser(result[5].toNumber()));
+          $("#distributor-id").text(result[6]);
+          $("#retailer-id").text(result[7]);
+          $("#consumer-id").text(result[8]);
           console.log('fetchItemBufferTwo', result);
         }).catch(function(err) {
           console.log(err.message);
@@ -377,9 +374,8 @@ App = {
 
         App.contracts.SupplyChain.deployed().then(function(instance) {
         var events = instance.allEvents(function(err, log){
-            console.log(333)
-          if (!err)
-            $("#ftc-events").append('<li>' + log.event + ' - ' + log.transactionHash + '</li>');
+            if (!err) $("#ftc-events").append('<li>' + log.event + ' - ' + log.transactionHash + '</li>');
+            console.log(log);
         });
         }).catch(function(err) {
           console.log(err.message);

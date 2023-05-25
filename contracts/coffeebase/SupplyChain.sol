@@ -172,7 +172,7 @@ contract SupplyChain is Ownable, FarmerRole, DistributorRole, RetailerRole, Cons
         itemState: defaultState,
         distributorID: address(0),
         retailerID: address(0),
-        consumerID: _originFarmerID
+        consumerID: address(0)
     });
     
     items[_upc] = item;
@@ -247,6 +247,7 @@ contract SupplyChain is Ownable, FarmerRole, DistributorRole, RetailerRole, Cons
     items[_upc].itemState = State.Sold;
     // Transfer money to farmer
     items[_upc].originFarmerID.transfer(items[_upc].productPrice);
+
     // emit the appropriate event
     emit Sold(_upc);
   }
@@ -300,7 +301,7 @@ contract SupplyChain is Ownable, FarmerRole, DistributorRole, RetailerRole, Cons
   }
 
   // Define a function 'fetchItemBufferOne' that fetches the data
-  function fetchItemBufferOne(uint _upc) public view returns
+  function fetchItemBufferOne1(uint _upc) public view returns
   (
     uint    itemSKU,
     uint    itemUPC,
@@ -331,6 +332,32 @@ contract SupplyChain is Ownable, FarmerRole, DistributorRole, RetailerRole, Cons
   originFarmInformation,
   originFarmLatitude,
   originFarmLongitude
+  );
+  }
+
+    function fetchItemBufferOne(uint _upc) public view returns
+    (
+      uint    itemSKU,
+      uint    itemUPC,
+      address ownerID,
+      address originFarmerID,
+      string memory originFarmName,
+      string memory originFarmInformation,
+      string memory originFarmLatitude,
+      string memory originFarmLongitude
+    )
+  {
+    Item memory item = items[_upc];
+  return
+  (
+  item.sku,
+  item.upc,
+  item.ownerID,
+  item.originFarmerID,
+  item.originFarmName,
+  item.originFarmInformation,
+  item.originFarmLatitude,
+  item.originFarmLongitude
   );
   }
 
